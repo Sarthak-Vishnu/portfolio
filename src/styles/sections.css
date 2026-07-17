@@ -557,7 +557,7 @@
   inset: 0;
   z-index: -1;
   border-radius: inherit;
-  background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.16), transparent 60%);
+  background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), var(--sheen-tint), transparent 60%);
   opacity: 0;
   transition: opacity 450ms ease;
   pointer-events: none;
