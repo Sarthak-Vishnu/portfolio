@@ -696,34 +696,43 @@
    ============================================================ */
 
 .projects {
-  max-width: 900px;
+  max-width: 980px;
   scroll-margin-top: 80px;
 }
 
+/* Bento: featured project spans full width, the rest are 2-up */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
 .project-entry {
+  grid-column: span 3;
   padding: 32px;
-  margin-bottom: 20px;
   background-color: var(--color-surface);
   border-radius: var(--radius-md);
   border-bottom: none;
 }
 
-.project-entry:first-of-type {
-  padding-top: 32px;
-}
-
-.project-entry:last-of-type {
-  border-bottom: none;
-  padding-bottom: 32px;
-  margin-bottom: 0;
-}
-
-/* Featured (VLM) entry — accent-tinted card */
+/* Featured (VLM) entry — full-width accent-tinted showcase */
 .project-entry--featured {
+  grid-column: 1 / -1;
   border-left: none;
-  padding-left: 32px;
+  padding: 36px;
   margin-left: 0;
   background-color: var(--color-accent-soft);
+}
+
+@media (max-width: 680px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+  .project-entry,
+  .project-entry--featured {
+    grid-column: 1 / -1;
+  }
 }
 
 /* Title row — hover reveals GitHub link */
@@ -849,13 +858,19 @@
    ============================================================ */
 
 .publications {
-  max-width: 900px;
+  max-width: 980px;
   scroll-margin-top: 80px;
+}
+
+.publications__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
 }
 
 .pub-entry {
   padding: 32px;
-  margin-bottom: 20px;
   background-color: var(--color-surface);
   border-radius: var(--radius-md);
   border-bottom: none;
@@ -867,14 +882,10 @@
   box-shadow: var(--shadow-md);
 }
 
-.pub-entry:first-of-type {
-  padding-top: 32px;
-}
-
-.pub-entry:last-of-type {
-  border-bottom: none;
-  padding-bottom: 32px;
-  margin-bottom: 0;
+@media (max-width: 680px) {
+  .publications__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .pub-badges {

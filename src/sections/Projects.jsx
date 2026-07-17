@@ -128,9 +128,11 @@ export default function Projects() {
         <h2 className="section-heading">Projects</h2>
       </div>
 
-      {PROJECTS.map((project) => (
-        <ProjectEntry key={project.id} project={project} />
-      ))}
+      <div className="projects__grid">
+        {PROJECTS.map((project) => (
+          <ProjectEntry key={project.id} project={project} />
+        ))}
+      </div>
     </section>
   );
 }

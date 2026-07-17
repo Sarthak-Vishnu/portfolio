@@ -60,9 +60,11 @@ export default function Publications() {
         <h2 className="section-heading">Publications</h2>
       </div>
 
-      {PUBLICATIONS.map((pub) => (
-        <PubEntry key={pub.id} pub={pub} />
-      ))}
+      <div className="publications__grid">
+        {PUBLICATIONS.map((pub) => (
+          <PubEntry key={pub.id} pub={pub} />
+        ))}
+      </div>
     </section>
   );
 }
